@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.17)
+project(Qt1)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+#set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -lpython3.8)
+set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} /opt/Qt/5.15.0/gcc_64/lib/cmake)
+#find_package(Qt<QTVERSION> COMPONENTS Widgets)
+find_package(Qt5Widgets NO_DEFAULT_PATH)
+#find_package(PythonLibs  REQUIRED)
+include_directories(/usr/include/python3.8/)
+aux_source_directory(. DIRS_SRCS)
+
+add_executable(${PROJECT_NAME} ${DIRS_SRCS})
+target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
+target_link_libraries(${PROJECT_NAME} python3.8)
