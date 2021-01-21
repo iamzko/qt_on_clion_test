@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <python3.8/Python.h>
+#include <python.h>
 #include <QApplication>
 #include <QFormLayout>
 #include <QtGlobal>
